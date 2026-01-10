@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv2/
+venv2/
+
+# Temp files
+temp/
+vid_*/
+*.wav
+frames/
+not_to_add_to_git/
+
+# API keys
+.env
+
+# Media files (ignore large videos)
+*.mov
+*.avi
+*.mkv
+*.mp4

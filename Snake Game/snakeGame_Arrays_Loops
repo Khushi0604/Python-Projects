@@ -37,11 +37,22 @@ while not game_over:
     head_r,head_c=snake[0]
     new_head=(head_r+dr,head_c+dc)
 
+    #Self Collision
+    if new_head in snake:
+        print("Game Over! Hit Yourself! ")
+        break
+
+    #Wall collision
+    if not ( 0<=new_head[0]<Rows and 0<=new_head[1]<Cols):
+        print("Game Over! Hit the Wall")
+        break
+
+    snake.insert(0,new_head)
+
     #Food eaten
     if new_head==food:
         food=(random.randint(0,Rows-1), random.randint(0,Cols-1))
     else:
         snake.pop()
 
-    
     

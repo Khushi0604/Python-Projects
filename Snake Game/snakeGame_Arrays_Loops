@@ -1,0 +1,47 @@
+import random
+
+Rows,Cols=10,10
+
+def print_grid():
+    grid=[['.' for _ in range(Cols)] for _ in range(Rows)]
+    for r,c in snake:
+        grid[r][c]='S'
+    fr,fc=food 
+    grid[fr][fc]='F'
+
+    for row in grid:
+        print(' '.join(row))
+    print()
+
+DIRECTIONS={
+    'W':(-1,0),
+    'S':(1,0),
+    'A':(0,-1),
+    'D':(0,1)
+}
+
+snake=[(5,5),(5,4),(5,3)]
+direction='D'
+food=(random.randint(0,Rows-1), random.randint(0,Cols-1))
+
+game_over=False
+
+while not game_over:
+    print_grid()
+    move=input("Move (W/A/S/D): ").upper()
+
+    if move not in DIRECTIONS:
+        continue
+
+    dr,dc=DIRECTIONS[move]
+    head_r,head_c=snake[0]
+    new_head=(head_r+dr,head_c+dc)
+
+    #Food eaten
+    if new_head==food:
+        food=(random.randint(0,Rows-1), random.randint(0,Cols-1))
+    else:
+        snake.pop()
+
+    
+    

@@ -17,3 +17,7 @@ A classic Snake game implemented in a console environment using fundamental prog
 4. Coordinate-based movement
 5. Collision Detection
 6. Time Complexity reasoning
+
+## Monte Carlo
+This script consists of the idea of simulating 1000 future stock prices. It uses random normal returns.
+Libraries:numpy, matplotlib
